@@ -1,5 +1,3 @@
-from memory_profiler import profile
-
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from datetime import datetime
