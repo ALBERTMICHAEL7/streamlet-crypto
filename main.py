@@ -17,15 +17,11 @@ TODAY = date.today().strftime("%Y-%m-%d")
 st.title("Stock Prediction App")
 # cryptos = [
 #
-cryptos = ["BTC-USD", "ETH-USD", "XRP-USD", "LTC-USD", "ADA-USD", "AVAX-USD",
-           "XMR-USD", "AAVE-USD", "MKR-USD", "COMP-USD", "SHIB-USD", "NEO-USD", "BSV-USD", "FTT-USD", "HT-USD",
-           "FIL-USD","SOL-USD","DOT-USD", "DOGE-USD", "AVAX-USD", "LINK-USD","ALGO-USD", "BCH-USD", "XLM-USD", "VET-USD","MKR-USD", "ATOM-USD", "EOS-USD", "LUNA-USD", "XTZ-USD", "TRX-USD","BNB-USD",]
+cryptos = ["BTC-USD", "ETH-USD", "XRP-USD", "LTC-USD", "ADA-USD", "AVAX-USD"]
 
 
 def load_data():
-    cryptos =  ["BTC-USD", "ETH-USD", "XRP-USD", "LTC-USD", "ADA-USD", "AVAX-USD",
-           "XMR-USD", "AAVE-USD", "MKR-USD", "COMP-USD", "SHIB-USD", "NEO-USD", "BSV-USD", "FTT-USD", "HT-USD",
-           "FIL-USD","SOL-USD","DOT-USD", "DOGE-USD", "AVAX-USD", "LINK-USD","ALGO-USD", "BCH-USD", "XLM-USD", "VET-USD","MKR-USD", "ATOM-USD", "EOS-USD", "LUNA-USD", "XTZ-USD", "TRX-USD","BNB-USD",]
+    cryptos =  ["BTC-USD", "ETH-USD", "XRP-USD", "LTC-USD", "ADA-USD", "AVAX-USD"]
 
     start_date_unix = 1627776000  # Unix timestamp (August 1, 2023)
     end_date = date.today()
@@ -195,7 +191,7 @@ def train_models(cryptos, X_train_reshaped, y_train_reshaped, batch_size=32, epo
             lstm_models[crypto] = model
     return lstm_models
 
-
+st.file_uploader
 mb=st.button("train")
 if mb:
     lstm_models = train_models(cryptos, X_train_reshaped, y_train_reshaped)
