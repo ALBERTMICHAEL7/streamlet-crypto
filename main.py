@@ -197,14 +197,14 @@ if mb:
     lstm_models = train_models(cryptos, X_train_reshaped, y_train_reshaped)
    # save the lstm_models as a pickle file
 
-    model_pkl_file = "New_lstm_models.pkl"
-    with open(model_pkl_file, 'wb') as file:
-        pickle.dump(lstm_models, file)
-model_pkl_file= "New_lstm_models.pkl"
-if mb:
-    model_pkl_file = "New_lstm_models.pkl"
-with open(model_pkl_file, 'rb') as file:
-    lstm_models = pickle.load(file)
+#     model_pkl_file = "New_lstm_models.pkl"
+#     with open(model_pkl_file, 'wb') as file:
+#         pickle.dump(lstm_models, file)
+# model_pkl_file= "New_lstm_models.pkl"
+# if mb:
+#     model_pkl_file = "New_lstm_models.pkl"
+# with open(model_pkl_file, 'rb') as file:
+#     lstm_models = pickle.load(file)
     #return lstm_models
 #if mb:
 #saved_model(lstm_models)
