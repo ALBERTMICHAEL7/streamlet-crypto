@@ -193,8 +193,8 @@ def train_models(cryptos, X_train_reshaped, y_train_reshaped, batch_size=32, epo
 
 #st.file_uploader
 mb=st.button("train")
-if mb:
-    lstm_models = train_models(cryptos, X_train_reshaped, y_train_reshaped)
+#if mb:
+lstm_models = train_models(cryptos, X_train_reshaped, y_train_reshaped)
    # save the lstm_models as a pickle file
 
 #     model_pkl_file = "New_lstm_models.pkl"
