@@ -17,11 +17,11 @@ TODAY = date.today().strftime("%Y-%m-%d")
 st.title("Stock Prediction App")
 # cryptos = [
 #
-cryptos = ["BTC-USD", "ETH-USD", "XRP-USD"]
+cryptos = ["BTC-USD", "ETH-USD", "XRP-USD","BCH-USD", "XLM-USD", "VET-USD","MKR-USD", "ATOM-USD", "EOS-USD", "LUNA-USD", "XTZ-USD", "TRX-USD","BNB-USD"]
 
 
 def load_data():
-    cryptos =  ["BTC-USD", "ETH-USD", "XRP-USD"]
+    cryptos =  ["BTC-USD", "ETH-USD", "XRP-USD","BCH-USD", "XLM-USD", "VET-USD","MKR-USD", "ATOM-USD", "EOS-USD", "LUNA-USD", "XTZ-USD", "TRX-USD","BNB-USD"]
 
     start_date_unix = 1627776000  # Unix timestamp (August 1, 2023)
     end_date = date.today()
