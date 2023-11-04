@@ -38,7 +38,7 @@ def load_data():
     return crypto_data
 
 crypto_data = load_data()
-@st.cache_data(experimental_allow_widgets=True)
+#@st.cache_data(experimental_allow_widgets=True)
 def all():
     selected_coins = st.selectbox("Select dataset for prediction", cryptos)
     if st.button("show data end lines"):
