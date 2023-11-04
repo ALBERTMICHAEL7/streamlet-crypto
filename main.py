@@ -27,19 +27,20 @@ def load_data():
     end_date = date.today()
     end_date_unix = int(datetime(end_date.year, end_date.month, end_date.day).timestamp())
     # Fetch data from Yahoo Finance using yfinance
-    crypto_data = {}
-    for crypto in cryptos:
-        crypto_df = yf.download(crypto, start=start_date_unix, end=end_date_unix, interval="1d")
-        crypto_data[crypto] = crypto_df
+    try:
+        crypto_data = {}
+        for crypto in cryptos:
+            crypto_df = yf.download(crypto, start=start_date_unix, end=end_date_unix, interval="1d")
+            crypto_data[crypto] = crypto_df
+        st.write("loading the coin data")
+    except:
+        st.write("error in loading the coin data")
     return crypto_data
 
-
+crypto_data = load_data()
 @st.cache_data(experimental_allow_widgets=True)
 def all():
     selected_coins = st.selectbox("Select dataset for prediction", cryptos)
-    crypto_data = load_data()
-    st.write("loading the coin data")
-
     if st.button("show data end lines"):
         st.subheader('Raw data')
         st.write(crypto_data[selected_coins].tail())
