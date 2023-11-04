@@ -37,12 +37,14 @@ def load_data():
 @st.cache_data(experimental_allow_widgets=True)
 def all():
     selected_coins = st.selectbox("Select dataset for prediction", cryptos)
-    future_days = st.slider("Number of days to forecast", 1, 30)
-    # period = n_months * 15
+    crypto_data = load_data()
+    st.write("loading the coin data")
 
     if st.button("show data end lines"):
         st.subheader('Raw data')
         st.write(crypto_data[selected_coins].tail())
+    future_days = st.slider("Number of days to forecast", 1, 30)
+    # period = n_months * 15
     fp = st.button("Cryptocurrency Price Forecast")
     if fp:
         st.title("Cryptocurrency Price Forecast")
@@ -53,10 +55,8 @@ def all():
     return selected_coins, future_days, xb, fp, err
 
 
-crypto_data = load_data()
-st.write("loading the coin data")
 
-st.write("NETWORK ERROR TRY AGAIN slowly after loading the coin")
+#st.write("NETWORK ERROR TRY AGAIN slowly after loading the coin")
 selected_coins, future_days, xb, fp, err=all()
 
 sequence_length = 100
