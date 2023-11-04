@@ -232,9 +232,7 @@ def future_function():
     return future_predictions
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_error
-
 # for crypto, r2 in r2_scores.items():
 #     st.write(f"R2 Score for {crypto}: {r2:.6f}")
 # ... (Your existing code for loading and preprocessing data) ...
@@ -244,7 +242,7 @@ from sklearn.metrics import mean_absolute_error
 #fullclose_past.extend(price_list) #timestapms
 # Display predicted price graphs for selected cryptocurrencies
 future_predictions=future_function()
-selected_coins, future_days, xb, fp, err = all()
+#selected_coins, future_days, xb, fp, err = all()
 if fp:
     price_array = future_predictions.get(selected_coins, None)
     if price_array is not None:
