@@ -52,11 +52,12 @@ def all():
 
     return selected_coins, future_days, xb, fp, err
 
-try:
-    crypto_data = load_data()
-except:
-    st.write("NETWORK ERROR TRY AGAIN slowly after loading the coin")
-    selected_coins, future_days, xb, fp, err=all()
+
+crypto_data = load_data()
+st.write("loading the coin data")
+
+st.write("NETWORK ERROR TRY AGAIN slowly after loading the coin")
+selected_coins, future_days, xb, fp, err=all()
 
 sequence_length = 100
 
